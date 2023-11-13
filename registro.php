@@ -14,21 +14,21 @@
             <div class="row">
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4">
-                    <form id="formRegistro">
-                        <label for="">Nombre:</label>
-                        <input type="text" name="usuNombre" id="usuNombre" class="form-control">
-                        <label for="">Fecha Nacimiento:</label>
-                        <input type="text" name="usuFecha" id="usuFecha" class="form-control">
-                        <label for="">Email:</label>
-                        <input type="email" name="usuEmail" id="usuEmail" class="form-control"> 
-                        <label for="">Contraseña</label>
-                        <input type="password" name="usuContraseña" id="usuContraseña" class="form-control">
+                    <form id="formRegistro" method="post" onsubmit="return agregarNuevoUsuario()">
+                        <label >Nombre:</label>
+                        <input type="text" name="usuNombre" id="usuNombre" class="form-control" required>
+                        <label >Fecha Nacimiento:</label>
+                        <input type="text" name="usuFecha" id="usuFecha" class="form-control" required>
+                        <label >Email:</label>
+                        <input type="email" name="usuEmail" id="usuEmail" class="form-control" required> 
+                        <label >Contraseña</label>
+                        <input type="current-password" name="usuContraseña" id="usuContraseña" class="form-control" required>
                         <br>
                         <div class="row">
                             <div class="col-sm-6 text-left">
                             <button class="btn btn-primary">Registrar</button>
                             </div>
-                            <div class="col-sm-6 text-lefttext-right">
+                            <div class="col-sm-6 text-right">
                             <a href="index.php" class="btn btn-secondary">Log In</a>
                             </div>       
                         </div>
@@ -38,7 +38,23 @@
             </div>
     </div>
 
+<script src="librerias/jquery-3.7.1.min.js"></script>
 <script src="librerias/sweetalert.min.js"></script>
 
+<script type="text/javascript">
+    function agregarNuevoUsuario(){
+        $.ajax({
+            method: "POST",
+            data: $('#formRegistro').serialize(),
+            url:"procesos/usuarios/agregarUsuario.php",
+            succes:function(respuesta){
+                alert(respuesta);
+            }
+        });
+
+        return false;
+
+    }
+</script>
 </body>
 </html>

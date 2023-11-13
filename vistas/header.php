@@ -7,6 +7,7 @@
         <title>Gestor de archivos de Juliancito</title>
         <link rel="stylesheet" href="../librerias/bootstrap4/bootstrap.min.css">
         <link rel="stylesheet" href="../librerias/fontawesome/css/all.css">
+        <link rel="stylesheet" href="../librerias/dataTable/dataTables.bootstrap4.min.css">
     </head>
     <body>
         <!-- Navigation -->
