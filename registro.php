@@ -16,13 +16,13 @@
                 <div class="col-sm-4">
                     <form id="formRegistro" method="post" onsubmit="return agregarNuevoUsuario()">
                         <label >Nombre:</label>
-                        <input type="text" name="usuNombre" id="usuNombre" class="form-control" required>
+                        <input type="text" name="nombre" id="nombre" class="form-control" required>
                         <label >Fecha Nacimiento:</label>
-                        <input type="text" name="usuFecha" id="usuFecha" class="form-control" required>
+                        <input type="text" name="fechaNacimiento" id="fechaNacimiento" class="form-control" required>
                         <label >Email:</label>
-                        <input type="email" name="usuEmail" id="usuEmail" class="form-control" required> 
+                        <input type="email" name="correo" id="correo" class="form-control" required> 
                         <label >Contraseña</label>
-                        <input type="current-password" name="usuContraseña" id="usuContraseña" class="form-control" required>
+                        <input type="current-password" name="contrasenia" id="contrasenia" class="form-control" required>
                         <br>
                         <div class="row">
                             <div class="col-sm-6 text-left">
@@ -47,8 +47,18 @@
             method: "POST",
             data: $('#formRegistro').serialize(),
             url:"procesos/usuarios/agregarUsuario.php",
-            succes:function(respuesta){
-                alert(respuesta);
+            success: function(respuesta){
+                respuesta = respuesta.trim();
+
+                if (respuesta == 1) {
+
+                    swal(":D", "Si", "Exito!");
+
+                }else {
+
+                    swal("D:", "No", "Error!");
+
+                }
             }
         });
 
