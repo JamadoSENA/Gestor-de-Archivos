@@ -18,11 +18,11 @@
                         <label >Nombre:</label>
                         <input type="text" name="nombre" id="nombre" class="form-control" required>
                         <label >Fecha Nacimiento:</label>
-                        <input type="text" name="fechaNacimiento" id="fechaNacimiento" class="form-control" required>
+                        <input type="text" name="fecha" id="fechaNacimiento" class="form-control" required>
                         <label >Email:</label>
                         <input type="email" name="correo" id="correo" class="form-control" required> 
                         <label >Contraseña</label>
-                        <input type="current-password" name="contrasenia" id="contrasenia" class="form-control" required>
+                        <input type="password" name="contrasenia" id="contrasenia" class="form-control" required>
                         <br>
                         <div class="row">
                             <div class="col-sm-6 text-left">
@@ -51,9 +51,13 @@
                 respuesta = respuesta.trim();
 
                 if (respuesta == 1) {
+                    $('#formRegistro')[0].reset();
+                    swal(":D", "Si", "success");
 
-                    swal(":D", "Si", "Exito!");
+                }else if(respuesta == 2) {
 
+                    swal("Este usuario ya existe, por favor añade otro.");
+                
                 }else {
 
                     swal("D:", "No", "Error!");

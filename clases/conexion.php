@@ -9,8 +9,7 @@
             $password = "";
             $bd = "gestor";
 
-            $conexion = mysqli_connect($servidor, 
-            $usuario, $password, $base);
+            $conexion = mysqli_connect($servidor, $usuario, $password, $bd);
 
             return $conexion;
 
