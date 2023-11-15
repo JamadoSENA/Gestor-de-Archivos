@@ -35,7 +35,7 @@
             $conexion = Conectar::conexion();
 
             $sql = "SELECT email FROM t_usuarios
-            WHERE email = '$usuario'";
+            WHERE correo = '$usuario'";
 
             $result = mysqli_query($conexion, $sql);
             $datos = mysqli_fetch_array($result);

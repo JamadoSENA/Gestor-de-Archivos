@@ -54,15 +54,17 @@
                     $('#formRegistro')[0].reset();
                     swal(":D", "Si", "success");
 
-                }else if(respuesta == 2) {
+                }else {
+
+                swal("D:", "No", "Error!");
+
+                }if(respuesta == 2) {
 
                     swal("Este usuario ya existe, por favor añade otro.");
                 
                 }else {
 
-                    swal("D:", "No", "Error!");
-
-                }
+swal("D:", "No", "Error!");
             }
         });
 
